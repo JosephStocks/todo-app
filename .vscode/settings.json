@@ -25,5 +25,8 @@
         "**/*.sass",
         "**/*.ts",
         "**/*.json"
-    ]
+    ],
+    "editor.quickSuggestions": {
+        "strings": true
+      }
 }
