@@ -16,7 +16,6 @@ module.exports = {
     darkMode: false, // or 'media' or 'class'
     theme: {
         colors: {
-            // Build your palette here
             transparent: "transparent",
             current: "currentColor",
             black: colors.black,
@@ -56,6 +55,9 @@ module.exports = {
                 "6xl": "72rem",
                 "7xl": "80rem",
             },
+            // fontFamily: {
+            //     sans: `Roboto, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`,
+            // },
         },
     },
     variants: {
@@ -64,6 +66,7 @@ module.exports = {
             borderColor: ["checked", "checked-sibling"],
             textDecoration: ["checked", "checked-sibling"],
             cursor: ["hover", "focus"],
+            outline: ["focus"],
         },
         textOpacity: [
             "responsive",
