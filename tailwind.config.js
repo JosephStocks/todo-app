@@ -63,6 +63,7 @@ module.exports = {
             backgroundColor: ["checked", "checked-sibling"],
             borderColor: ["checked", "checked-sibling"],
             textDecoration: ["checked", "checked-sibling"],
+            cursor: ["hover", "focus"],
         },
         textOpacity: [
             "responsive",
