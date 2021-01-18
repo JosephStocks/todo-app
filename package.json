@@ -8,10 +8,11 @@
     "css:build": "postcss src/tailwind.css -o public/css/tailwind.css",
     "db:createdb": "createdb -U postgres todo-app",
     "db:createtables": "psql -U postgres -d todo-app -f models/createTables.sql",
+    "db:createmockdata": "psql -U postgres -d todo-app -f models/createMockData.sql",
     "server": "nodemon app.js 3000"
   },
   "keywords": [],
-  "author": "",
+  "author": "Joseph Stocks",
   "license": "ISC",
   "dependencies": {
     "@tailwindcss/forms": "^0.2.1",
