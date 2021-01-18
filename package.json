@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "css:build": "postcss src/tailwind.css -o public/css/tailwind.css",
-    "db:build": "echo \"need to put sql db inititiation file here\"",
+    "db:createdb": "createdb -U postgres todo-app",
+    "db:createtables": "psql -U postgres -d todo-app -f models/createTables.sql",
     "server": "nodemon app.js 3000"
   },
   "keywords": [],
