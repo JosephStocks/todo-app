@@ -8,40 +8,57 @@
 </head>
 <body class="bg-lightBlue-50">
     <div class="flex justify-center w-full">
-        <div class="w-10/12 border divide-y">
-            <div class="w-full flex justify-center prose">
+        <div class="w-10/12">
+            <div class="w-full flex justify-center prose p-4 pb-2  border-b-2 border-black">
                 <h2>To Do List</h2>
             </div>
 
-            <form>
-                <input type="checkbox" id="zero" name="" value="0" class="text-gray-500 mb-1">
-                <label for="zero" class="checked-sibling:opacity-50 checked-sibling:line-through"> finish the to do app project</label><br>
-                <input type="checkbox" id="two" name="" value="1" class="text-gray-500 mb-1">
-                <label for="two" class="checked-sibling:opacity-50 checked-sibling:line-through"> get a job!</label><br>
-                <div class="group">
-                    <input type="checkbox" id="three" name="" value="2" class="text-gray-500 mb-1">
-                    <label for="three" class="checked-sibling:opacity-50 checked-sibling:line-through"> do some stuff</label>
-                    <span class="text-black text-opacity-0 group-hover:text-opacity-100 no-hover:text-opacity-100">X</span><br>
+            <form class="pt-3">
+                <div class="uncompleted-tasks space-y-2">
+                    <div class="group flex items-center">
+
+                        <input type="checkbox" id="1" name="" value="1" class="text-gray-500 w-6 h-6 rounded-md self-start">
+                        <label for="1" class="inline-block ml-2 checked-sibling:opacity-50 checked-sibling:line-through text-lg leading-snug">finish the to do app finish the to do app project</label>
+                        <svg class="ml-1 opacity-0 group-hover:opacity-100 no-hover:opacity-100 w-4 fill-current text-gray-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="group flex items-center">
+
+                        <input type="checkbox" id="1" name="" value="1" class="text-gray-500 w-6 h-6 rounded-md self-start">
+                        <label for="1" class="inline-block ml-2 checked-sibling:opacity-50 checked-sibling:line-through text-lg leading-snug whitespace-pre-line">finish the to do app finish the to do app project</label>
+                        <svg class="ml-1 opacity-0 group-hover:opacity-100 no-hover:opacity-100 w-4 fill-current text-gray-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="group flex items-center">
+
+                        <input type="checkbox" id="1" name="" value="1" class="text-gray-500 w-6 h-6 rounded-md self-start">
+                        <label for="1" class="inline-block ml-2 checked-sibling:opacity-50 checked-sibling:line-through text-lg leading-snug"> to do app project</label>
+                        <svg class="ml-1 opacity-0 group-hover:opacity-100 no-hover:opacity-100 w-4 h-4 fill-current text-gray-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <!-- <div class="group flex items-center">
+                        <div>
+                            <input type="checkbox" id="2" name="" value="2" class="text-gray-500 w-6 h-6 rounded-md self-start">
+                        </div>
+                        <label for="1" class="inline-block ml-2 checked-sibling:opacity-50 checked-sibling:line-through text-lg">get a job!</label>
+                        <svg class="ml-1 opacity-0 group-hover:opacity-100 no-hover:opacity-100 w-4 fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="group flex items-center">
+                        <div>
+                            <input type="checkbox" id="3" name="" value="3" class="text-gray-500 w-6 h-6 rounded-md self-start">
+                        </div>
+                        <label for="3" class="inline-block ml-2 checked-sibling:opacity-50 checked-sibling:line-through text-lg">do some stuff</label>
+                        <svg class="ml-1 opacity-0 group-hover:opacity-100 no-hover:opacity-100 w-4 fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg> -->
+                    </div>
                 </div>
-                <div class="group">
-                    <input type="checkbox" id="four" name="" value="2" class="text-gray-500 mb-1">
-                    <label for="four" class="checked-sibling:opacity-50 checked-sibling:line-through"> do some stuff</label>
-                    <span class="opacity-0 group-hover:opacity-100 no-hover:opacity-100">X</span><br>
-                </div>
-                <div class="group flex items-center space-x-1">
-                    <input type="checkbox" id="five" name="" value="2" class="text-gray-500">
-                    <label for="five" class="checked-sibling:opacity-50 checked-sibling:line-through"> do some stuff</label>
-                    <svg class="opacity-0 group-hover:opacity-100 no-hover:opacity-100 w-4 font-thin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
-                    </svg>
-                </div>
-                <div class="group flex items-center space-x-1">
-                    <input type="checkbox" id="six" name="" value="2" class="text-gray-500">
-                    <label for="six" class="checked-sibling:opacity-50 checked-sibling:line-through"> do some stuff</label>
-                    <svg class="opacity-0 group-hover:opacity-100 no-hover:opacity-100 w-4 font-bold fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
-                    </svg>
-                </div>
+
               </form>
         </div>
 
