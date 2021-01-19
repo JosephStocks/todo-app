@@ -5,27 +5,30 @@ const db = require("../models/database");
 router.use(express.urlencoded({ extended: false }));
 router.use(express.json());
 
-router.get("/", (req, res) => {
-    db.query(`SELECT * FROM todos`).then((records) => {
-        res.render("index", {
-            pageTitle: "Home Page.. hopefully",
-            todos: records,
-        });
+//READ: GRABS ALL EXISTING TODOS FROM DB
+router.get("/", async (req, res) => {
+    let records = await db.query(`SELECT * FROM todos`);
+    res.render("index", {
+        pageTitle: "Home Page.. hopefully",
+        todos: records,
     });
 });
 
-router.delete("/", (req, res) => {
-    let id = req.body.id;
+//DELETE: DELETES AN EXISTING TODO USING ID FROM DB
+router.delete("/", async (req, res) => {
+    let id = Number(req.body.id);
     console.log(id);
-    db.query(`DELETE FROM todos WHERE id = ${id}`).then((result) => {
-        res.json(`id`);
+    let response = await db.query(`DELETE FROM todos WHERE id = $1`, id);
+    console.log(response);
+    let remainingRecords = await db.query(`SELECT * FROM todos`);
+    res.status(200).json({
+        id: id,
+        records: remainingRecords,
     });
-    // .then((result) => {
-    //     console.log(result);
-    //     db.query(`SELECT * FROM todos`).then((records) => {
-    //         console.log(records);
-    //     });
-    // });
 });
 
-module.exports = router;
+//CREATE: CREATES NEW TODO RECORD IN TODOS TABLE
+//TO IMPLEMENT!
+// router.post("/", async () => {});
+
+router.module.exports = router;
