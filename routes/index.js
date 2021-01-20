@@ -1,13 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const db = require("../models/database");
+const db = require("../models/");
 
 router.use(express.urlencoded({ extended: false }));
 router.use(express.json());
 
 //READ: GRABS ALL EXISTING TODOS FROM DB
 router.get("/", async (req, res) => {
-    let records = await db.query(`SELECT * FROM todos`);
+    let records = await db.todos.findAll();
     res.render("index", {
         pageTitle: "Home Page.. hopefully",
         todos: records,
@@ -16,11 +16,10 @@ router.get("/", async (req, res) => {
 
 //DELETE: DELETES AN EXISTING TODO USING ID FROM DB
 router.delete("/", async (req, res) => {
-    let id = Number(req.body.id);
-    console.log(id);
-    let response = await db.query(`DELETE FROM todos WHERE id = $1`, id);
-    console.log(response);
-    let remainingRecords = await db.query(`SELECT * FROM todos`);
+    let numRowsDeleted = db.todos.destroy({
+        where: { id: Number(req.body.id) },
+    });
+    let remainingRecords = db.todos.findAll();
     res.status(200).json({
         id: id,
         records: remainingRecords,
@@ -30,14 +29,23 @@ router.delete("/", async (req, res) => {
 //CREATE: CREATES NEW TODO RECORD IN TODOS TABLE
 //TO IMPLEMENT!
 router.post("/", async (req, res) => {
-    let id = Number(req.body.id);
-    let text = req.body.text;
+    let createResponse = db.user.create({
+        description: req.body.text,
+        completed: false,
+    });
 
-    let response = await db.query(`INSERT INTO todos (todo) VALUES ($1)`, text);
-    console.log(response);
+    console.log(createResponse);
+
     res.status(200).json({
-        id: id,
+        text: req.body.text,
     });
 });
 
-router.module.exports = router;
+//PATCH: WILL UPDATE THE COMPLETED TAG WHEN CHECKLIST IS CHECKED OR UNCHECKED
+//true or false????? toggle?? or two different functions
+//GRAB THE PLUS ICON FROM THE HEROICONS
+router.patch("/", async (req, res) => {
+    db.todos.update({ completed: true }, { where: req.body.id });
+});
+
+module.exports = router;

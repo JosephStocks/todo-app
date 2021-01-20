@@ -20,8 +20,11 @@
     "autoprefixer": "^10.2.1",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
+    "pg": "^8.5.1",
+    "pg-hstore": "^2.3.3",
     "pg-promise": "^10.9.0",
     "postcss-cli": "^8.3.1",
+    "sequelize": "^6.4.0",
     "tailwindcss": "^2.0.2",
     "tailwindcss-interaction-variants": "^5.0.0"
   }
