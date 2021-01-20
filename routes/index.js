@@ -29,6 +29,15 @@ router.delete("/", async (req, res) => {
 
 //CREATE: CREATES NEW TODO RECORD IN TODOS TABLE
 //TO IMPLEMENT!
-// router.post("/", async () => {});
+router.post("/", async (req, res) => {
+    let id = Number(req.body.id);
+    let text = req.body.text;
+
+    let response = await db.query(`INSERT INTO todos (todo) VALUES ($1)`, text);
+    console.log(response);
+    res.status(200).json({
+        id: id,
+    });
+});
 
 router.module.exports = router;
